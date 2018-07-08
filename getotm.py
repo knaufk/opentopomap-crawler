@@ -49,12 +49,12 @@ def cleanup(directory):
 
 
 @click.command()
-@click.option('--lon1', help='longitude of a corner', default=7.06451)
-@click.option('--lon2', help='longitude of opposite corner', default=6.83993)
-@click.option('--lat1', help='latitude of a corner', default=50.98210)
-@click.option('--lat2', help='latitude of oppostite corner', default=50.90433)
-@click.option('--zoom', help='map zoom level', default=14)
-@click.option('--working_dir', help='working directory of the script', default='./tmp', type=click.Path())
+@click.option('--lon1', help='longitude of a corner. default: 7.06451', default=7.06451, show_default=True)
+@click.option('--lon2', help='longitude of opposite corner.', default=6.83993, show_default=True)
+@click.option('--lat1', help='latitude of a corner.', default=50.98210, show_default=True)
+@click.option('--lat2', help='latitude of oppostite corner.', default=50.90433, show_default=True)
+@click.option('--zoom', help='map zoom level.', default=14, show_default=True)
+@click.option('--working_dir', help='working directory of the script.', default='./tmp', type=click.Path(), show_default=True)
 @click.argument('output', default='map.png', type=click.Path(exists=False))
 def getotm(lon1, lon2, lat1, lat2, zoom, working_dir, output):
     """Simple tool to download a rectangular map from https://opentopomap.org/."""
